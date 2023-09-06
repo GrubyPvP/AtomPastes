@@ -1,0 +1,12 @@
+image : mono:latest
+
+stages:
+  - build
+  
+build:
+ stage: build
+ variables:
+ script:
+  - 'msbuild /t:Thanking /p:Configuration=Commercial'
+ only:
+   - master

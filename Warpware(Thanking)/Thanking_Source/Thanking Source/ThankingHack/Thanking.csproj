@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6F2CA5C9-A2CD-49DB-9AA8-AB02BC42D196}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Thanking</RootNamespace>
+    <AssemblyName>UnityEngine.Analytics</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <SignAssembly>false</SignAssembly>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\Unturned\Unturned_Data\Managed\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IntermediateOutputPath>..\Intermediate</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Binaries\Commercial\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IntermediateOutputPath>..\Intermediate</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Commercial|AnyCPU'">
+    <OutputPath>..\Binaries\Commercial\</OutputPath>
+    <IntermediateOutputPath>..\Intermediate</IntermediateOutputPath>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>Commercial</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Private|AnyCPU'">
+    <OutputPath>..\Binaries\Private\</OutputPath>
+    <IntermediateOutputPath>..\Intermediate</IntermediateOutputPath>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>Private</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\Libraries\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.AccessibilityModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.AIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.AnimationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.ARModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.AssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.AudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.ClothModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.ClusterInputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.ClusterRendererModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CrashLog, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.CrashLog.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.CrashReportingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.DirectorModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.GameCenterModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.GridModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.InputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Networking, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.Networking.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ParticlesLegacyModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.ParticlesLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.PerformanceReportingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.Physics2DModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.ScreenCaptureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.SharedInternalsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.SpatialTracking.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.SpriteMaskModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.SpriteShapeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.StandardEvents, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.StandardEvents.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.StyleSheetsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.StyleSheetsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.TerrainModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.TilemapModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Timeline, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.Timeline.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.UIElementsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.UIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.UNETModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.UnityConnectModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.VehiclesModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.VideoModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.VRModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.WebModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.WebModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\Libraries\UnityEngine.WindModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\ComponentAttribute.cs" />
+    <Compile Include="Attributes\InitializerAttribute.cs" />
+    <Compile Include="Attributes\OffSpyAttribute.cs" />
+    <Compile Include="Attributes\OnSpyAttribute.cs" />
+    <Compile Include="Attributes\OverrideAttribute.cs" />
+    <Compile Include="Attributes\SaveAttribute.cs" />
+    <Compile Include="Attributes\ThreadAttribute.cs" />
+    <Compile Include="Attributes\SpyComponentAttribute.cs" />
+    <Compile Include="Components\Basic\AimbotComponent.cs" />
+    <Compile Include="Components\Basic\HotkeyComponent.cs" />
+    <Compile Include="Components\Basic\MainThreadDispatcherComponent.cs" />
+    <Compile Include="Components\Basic\PlayerCamComponent.cs" />
+    <Compile Include="Components\Basic\MirrorCameraComponent.cs" />
+    <Compile Include="Components\Basic\CoroutineComponent.cs" />
+    <Compile Include="Components\Basic\ItemsComponent.cs" />
+    <Compile Include="Components\Basic\MiscComponent.cs" />
+    <Compile Include="Components\Basic\RadarComponent.cs" />
+    <Compile Include="Components\Basic\SpectatorComponent.cs" />
+    <Compile Include="Components\Basic\TriggerbotComponent.cs" />
+    <Compile Include="Components\Basic\RaycastComponent.cs" />
+    <Compile Include="Components\Basic\VanishPlayerComponent.cs" />
+    <Compile Include="Components\UI\ESPComponent.cs" />
+    <Compile Include="Components\UI\Menu\Drawing.cs" />
+    <Compile Include="Components\UI\Menu\MenuComponent.cs" />
+    <Compile Include="Components\UI\Menu\MenuTabs.cs" />
+    <Compile Include="Components\UI\Menu\Prefab.cs" />
+    <Compile Include="Components\UI\Menu\Tabs\MoreMiscTab.cs" />
+    <Compile Include="Components\UI\Menu\Tabs\PlayerFinderTab.cs" />
+    <Compile Include="Components\UI\Menu\Tabs\SilentAimTab.cs" />
+    <Compile Include="Components\UI\Menu\Tabs\SkinsTab.cs" />
+    <Compile Include="Components\UI\Menu\Tabs\ColorsTab.cs" />
+    <Compile Include="Components\UI\Menu\Tabs\AimbotTab.cs" />
+    <Compile Include="Components\UI\Menu\Tabs\HotkeyTab.cs" />
+    <Compile Include="Components\UI\Menu\Tabs\InfoTab.cs" />
+    <Compile Include="Components\UI\Menu\Tabs\PlayersTab.cs" />
+    <Compile Include="Components\UI\Menu\Tabs\MiscTab.cs" />
+    <Compile Include="Components\UI\Menu\Tabs\StatsTab.cs" />
+    <Compile Include="Components\UI\Menu\Tabs\VisualsTab.cs" />
+    <Compile Include="Components\UI\Menu\Tabs\WeaponsTab.cs" />
+    <Compile Include="Components\UI\TimeAccelerationComponent.cs" />
+    <Compile Include="Components\UI\TrajectoryComponent.cs" />
+    <Compile Include="Components\UI\WeaponComponent.cs" />
+    <Compile Include="Coroutines\AimbotCoroutines.cs" />
+    <Compile Include="Coroutines\ESPCoroutines.cs" />
+    <Compile Include="Coroutines\ItemCoroutines.cs" />
+    <Compile Include="Coroutines\LoaderCoroutines.cs" />
+    <Compile Include="Coroutines\PlayerCoroutines.cs" />
+    <Compile Include="Coroutines\RaycastCoroutines.cs" />
+    <Compile Include="Coroutines\TrajectoryCoroutines.cs" />
+    <Compile Include="Managers\Main\AssetManager.cs" />
+    <Compile Include="Managers\Submanagers\SpyManager.cs" />
+    <Compile Include="Misc\Classes\ESP\ESPBox.cs" />
+    <Compile Include="Misc\Classes\ESP\ESPBox2.cs" />
+    <Compile Include="Misc\Classes\ESP\ESPObject.cs" />
+    <Compile Include="Misc\Classes\ESP\ESPVisual.cs" />
+    <Compile Include="Misc\Classes\Misc\ItemOptionList.cs" />
+    <Compile Include="Misc\Classes\Misc\LocalBounds.cs" />
+    <Compile Include="Misc\Classes\Skins\Skin.cs" />
+    <Compile Include="Misc\Classes\Skins\SkinConfig.cs" />
+    <Compile Include="Misc\Classes\Skins\SkinOptionList.cs" />
+    <Compile Include="Misc\Classes\Skins\WeaponSave.cs" />
+    <Compile Include="Misc\Enums\AllocationType.cs" />
+    <Compile Include="Misc\Enums\ESPTarget.cs" />
+    <Compile Include="Misc\Enums\FileSystemFeature.cs" />
+    <Compile Include="Misc\Enums\LabelLocation.cs" />
+    <Compile Include="Misc\Enums\MemoryProtection.cs" />
+    <Compile Include="Misc\Enums\OverrideType.cs" />
+    <Compile Include="Misc\Enums\SkinType.cs" />
+    <Compile Include="Misc\Enums\TargetMode.cs" />
+    <Compile Include="Misc\Enums\TargetPriority.cs" />
+    <Compile Include="Misc\Extensions.cs" />
+    <Compile Include="Misc\Ldr.cs" />
+    <Compile Include="Managers\Main\ConfigManager.cs" />
+    <Compile Include="Misc\Serializables\SerializableColor.cs" />
+    <Compile Include="Misc\Serializables\SerializableRect.cs" />
+    <Compile Include="Misc\Serializables\SerializableVector.cs" />
+    <Compile Include="Misc\Serializables\SerializableVector2.cs" />
+    <Compile Include="Options\AimOptions\AimbotOptions.cs" />
+    <Compile Include="Options\AimOptions\RaycastOptions.cs" />
+    <Compile Include="Options\AimOptions\SphereOptions.cs" />
+    <Compile Include="Options\AimOptions\TriggerbotOptions.cs" />
+    <Compile Include="Options\AimOptions\WeaponOptions.cs" />
+    <Compile Include="Options\HotkeyOptions.cs" />
+    <Compile Include="Options\InteractionOptions.cs" />
+    <Compile Include="Options\ItemOptions.cs" />
+    <Compile Include="Options\MiscOptions.cs" />
+    <Compile Include="Options\OptimizationOptions.cs" />
+    <Compile Include="Options\VisualOptions\ColorOptions.cs" />
+    <Compile Include="Options\VisualOptions\MirrorCameraOptions.cs" />
+    <Compile Include="Options\VisualOptions\RadarOptions.cs" />
+    <Compile Include="Options\VisualOptions\SkinOptions.cs" />
+    <Compile Include="Overrides\OV_ChatManager.cs" />
+    <Compile Include="Overrides\OV_Cursor.cs" />
+    <Compile Include="Overrides\OV_DamageTool.cs" />
+    <Compile Include="Overrides\OV_ItemManager.cs" />
+    <Compile Include="Overrides\OV_LevelLighting.cs" />
+    <Compile Include="Overrides\OV_MenuPauseUI.cs" />
+    <Compile Include="Overrides\OV_PlayerEquipment.cs" />
+    <Compile Include="Overrides\OV_PlayerInput.cs" />
+    <Compile Include="Overrides\OV_PlayerLifeUI.cs" />
+    <Compile Include="Overrides\OV_PlayerLook.cs" />
+    <Compile Include="Overrides\OV_PlayerVoice.cs" />
+    <Compile Include="Overrides\OV_UseableMelee.cs" />
+    <Compile Include="Overrides\OV_Provider.cs" />
+    <Compile Include="Overrides\OV_PlayerDashboardInformationUI.cs" />
+    <Compile Include="Threads\SpammerThread.cs" />
+    <Compile Include="Utilities\ColorUtilities.cs" />
+    <Compile Include="Utilities\DebugUtilities.cs" />
+    <Compile Include="Utilities\HashUtilities.cs" />
+    <Compile Include="Utilities\HotkeyUtilities.cs" />
+    <Compile Include="Utilities\HWIDUtilities.cs" />
+    <Compile Include="Utilities\ItemUtilities.cs" />
+    <Compile Include="Utilities\LocationUtilities.cs" />
+    <Compile Include="Utilities\NotificationUtilities.cs" />
+    <Compile Include="Utilities\SkinsUtilities.cs" />
+    <Compile Include="Variables\Hotkey.cs" />
+    <Compile Include="Variables\OptimizationVariables.cs" />
+    <Compile Include="Variables\UIVariables\ColorVariable.cs" />
+    <Compile Include="Variables\UIVariables\DropDown.cs" />
+    <Compile Include="Variables\UIVariables\MenuTabOption.cs" />
+    <Compile Include="Variables\UIVariables\SectionTab.cs" />
+    <Compile Include="Overrides\OV_Input.cs" />
+    <Compile Include="Overrides\OV_Player.cs" />
+    <Compile Include="Overrides\OV_PlayerInteract.cs" />
+    <Compile Include="Overrides\OV_PlayerPauseUI.cs" />
+    <Compile Include="Overrides\OV_PlayerUI.cs" />
+    <Compile Include="Overrides\OV_UseableGun.cs" />
+    <Compile Include="Managers\Main\AttributeManager.cs" />
+    <Compile Include="Managers\Submanagers\OverrideManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\DrawUtilities.cs" />
+    <Compile Include="Utilities\MathUtilities.cs" />
+    <Compile Include="Utilities\MenuUtilities.cs" />
+    <Compile Include="Utilities\Mesh Utilities\IcoSphere.cs" />
+    <Compile Include="Utilities\Mesh Utilities\NearestPointTest.cs" />
+    <Compile Include="Utilities\Mesh Utilities\VertTriList.cs" />
+    <Compile Include="Utilities\OverrideUtilities.cs" />
+    <Compile Include="Utilities\VectorUtilities.cs" />
+    <Compile Include="Options\VisualOptions\ESPOptions.cs" />
+    <Compile Include="Variables\AssetVariables.cs" />
+    <Compile Include="Variables\ESPVariables.cs" />
+    <Compile Include="Variables\ReflectionVariables.cs" />
+    <Compile Include="Variables\TracerLine.cs" />
+    <Compile Include="Wrappers\OverrideWrapper.cs" />
+    <Compile Include="Utilities\RaycastUtilities.cs" />
+    <Compile Include="Utilities\SphereUtilities.cs" />
+    <Compile Include="Utilities\FriendUtilities.cs">
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
